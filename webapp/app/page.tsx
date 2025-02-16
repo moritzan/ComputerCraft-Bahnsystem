@@ -41,7 +41,7 @@ export default function Home() {
         </div>
       </main>
       <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-                <a
+        <a
           className="flex items-center gap-2 hover:underline hover:underline-offset-4"
           href="https://github.com/moritzan/ComputerCraft-Bahnsystem"
           target="_blank"
@@ -55,6 +55,20 @@ export default function Home() {
             height={16}
           />
           Source Code →
+        </a>
+        <a
+          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
+          href={"/tutorial/"}
+          rel="noopener noreferrer"
+        >
+          <Image
+            aria-hidden
+            src="/globe.svg"
+            alt="Globe icon"
+            width={16}
+            height={16}
+          />
+          Tutorial
         </a>
       </footer>
     </div>
