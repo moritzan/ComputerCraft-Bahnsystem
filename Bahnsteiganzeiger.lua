@@ -1,4 +1,4 @@
-local Linien = {'S1 Kirschberg', 'S1 Hundeinsel'}
+local Linien = {{'S1 Hundeinsel', '1min'}, {'S1 Kirscheberg', '5min'}}
  
 function showLinien()
     for i = 1, #Linien do
@@ -34,6 +34,21 @@ function makeScrollingText(mon, text, textScale, yPos, textColor, bgColor)
         sleep(0.1)
     end
 end
+
+function printTrainsTable(mon)
+    --TODO
+    mon.setTextColor(colors.white)
+    for i=1, #Linien do
+        mon.setCursorPos(1, i)
+        mon.write(Linien[i][1])
+
+        --Minuten anhängen
+        local w, h = mon.getSize()
+        mon.setCursorPos(w-string.len(Linien[i][2])+1, i)
+        mon.write(Linien[i][2])
+    end
+    
+end
  
 -- Hauptteil (Main)
 do
@@ -49,11 +64,7 @@ do
         end
     end
  
-    monitor.setCursorPos(1, 1)
-    monitor.setTextColor(colors.white)
-    monitor.write("S1 Kirschberg  4 min")
-    monitor.setCursorPos(1, 2)
-    monitor.write("S1 Kirschberg  6 min")
+    printTrainsTable(monitor)
  
-    makeScrollingText(monitor, "S1 nach Hundeinsel heute circa 10 Minuten spaeter - Grund dafuer sind Schafe auf der Strecke", 1, 5, "f", "0")  -- Gelb: 6, WeiÃÂ: f
+    makeScrollingText(monitor, "S1 nach Hundeinsel heute circa 10 Minuten spaeter - Grund dafuer sind Schafe auf der Strecke", 1, 5, "f", "0") 
 end
