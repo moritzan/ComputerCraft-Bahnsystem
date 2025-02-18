@@ -66,5 +66,5 @@ do
  
     printTrainsTable(monitor)
  
-    makeScrollingText(monitor, "S1 nach Hundeinsel heute circa 10 Minuten spaeter - Grund dafuer sind Schafe auf der Strecke", 1, 5, "f", "0") 
+    makeScrollingText(monitor, "Software Version 0.2 *** S1 nach Hundeinsel heute circa 10 Minuten spaeter - Grund dafuer sind Schafe auf der Strecke", 1, 5, "f", "0") 
 end
